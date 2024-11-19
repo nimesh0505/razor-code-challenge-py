@@ -17,7 +17,10 @@ class Deck:
     ]
 
     def __init__(self):
-        """Initialize the deck with a full set of 52 cards."""
+        """
+        Initialize the deck with a full set of 52 cards.
+        Cards should also be shuffled on init
+        """
         self.cards = []
 
     def shuffle(self):
@@ -38,5 +41,8 @@ class Deck:
         """Return the number of cards left in the deck."""
 
     def __str__(self):
-        """Return a string representation of the remaining cards in the deck."""
+        """
+        Return a string representation of the remaining cards in the deck.
+        Expected format: "Deck with <remaining cards count> cards remaining."
+        """
 

@@ -24,20 +24,20 @@ Blackjack, also known as "21," is a popular card game where the goal is to get a
 
 The challenge is divided into three exercises, each with increasing difficulty:
 
-### 1. **Deck** (Easy)
+### 1. **Deck** (Basic)
 You’ll create a class to represent a deck of cards. The deck should:
 - Handle shuffling.
 - Allow drawing cards.
 - Reset to the original state.
 *Hint: Focus on managing the cards and their order.*
 
-### 2. **Blackjack Table** (Medium)
+### 2. **Blackjack Table** (Intermediate)
 The table represents a game environment. You’ll:
 - Manage multiple players and their hands.
 - Implement core game mechanics like dealing, hitting, splitting, and folding.
 *Hint: Think about how hands interact and how to ensure fairness for all players.*
 
-### 3. **Game instance** (Hard)
+### Bonus. **Game instance** (Advanced)
 The game instance tracks the state of the deck and provides strategic advice. You’ll:
 - Maintain a running count of cards dealt.
 - Provide advice on what to do based on the count.

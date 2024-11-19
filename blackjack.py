@@ -25,6 +25,8 @@ class Blackjack:
     def split(self, player):
         """
         Split a player's hand into two if the first two cards are of the same rank.
+        You can only split after the initial deal, not after you already hit
+        Also adds a card to each new hand.
         :param player: The player's identifier.
         """
 
