@@ -1,6 +1,8 @@
 # Razor Coding Test
 
-Welcome, and thank you for taking on this coding challenge! 🎉 This test is designed to assess your coding skills, problem-solving abilities, and familiarity with object-oriented programming. You’ll implement the logic for a simplified Blackjack game, complete with card counting.
+### Welcome, and thank you for taking on this coding challenge! 🎉
+
+This test is designed to assess your coding skills, problem-solving abilities, and familiarity with object-oriented programming. You’ll implement the logic for a simplified Blackjack game, complete with card counting.
 
 We’ve provided the structure for the classes and tests—your task is to fill in the blanks and make everything work. Each part of the challenge gets progressively more complex, so take your time and have fun with it!
 
@@ -35,8 +37,8 @@ The table represents a game environment. You’ll:
 - Implement core game mechanics like dealing, hitting, splitting, and folding.
 *Hint: Think about how hands interact and how to ensure fairness for all players.*
 
-### 3. **Counter** (Hard)
-The counter tracks the state of the deck and provides strategic advice. You’ll:
+### 3. **Game instance** (Hard)
+The game instance tracks the state of the deck and provides strategic advice. You’ll:
 - Maintain a running count of cards dealt.
 - Provide advice on what to do based on the count.
 - Simulate the house’s hidden hand and implement a reveal mechanic.
@@ -46,14 +48,18 @@ The counter tracks the state of the deck and provides strategic advice. You’ll
 
 ## 🚀 Getting Started
 
-1. **Clone the Repository**  
+1. **Fork the Repository**
+   Start by forking the repository to your own GitHub account.
+   Click the Fork button at the top right of the repository page.
+
+2. **Clone the Repository**  
    Start by cloning this repository to your local machine:
    ```bash
-   git clone <repository-url>
+   git clone <your-forked-repository-url>
    cd <repository-directory>
    ```
 
-2. **Set Up Your Environment**  
+3. **Set Up Your Environment**  
    Ensure you have Python 3.7+ installed. Optionally, create a virtual environment:
    ```bash
    python -m venv venv
@@ -61,14 +67,14 @@ The counter tracks the state of the deck and provides strategic advice. You’ll
    pip install -r requirements.txt
    ```
 
-3. **Explore the Codebase**
+4. **Explore the Codebase**
     Inside the project directory, you’ll find:
     - `deck.py`: Class skeleton for the Deck.
     - `blackjack.py`: Class skeleton for the Blackjack Table.
     - `game.py`: Class skeleton for the Counter.
     - `*_test.py`: Pre-written test cases for all classes.
 
-4. **Run Tests**
+5. **Run Tests**
     To check your progress, run the tests:
     ```bash
     python -m unittest discover .
