@@ -29,6 +29,7 @@ class Deck:
     def draw(self):
         """
         Draw a card from the deck.
+        hint: feel free to get the first or the last element from the list
 
         Raises:
             IndexError: If no cards are left in the deck.
