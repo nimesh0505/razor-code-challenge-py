@@ -17,63 +17,22 @@ results = {
     "tie": "It's a tie.",
 }
 
+# The Game class should manage the overall game flow and user interactions.
+# It should provide a command-line interface for the user to interact with the game.
+# The Game class should use the Blackjack class to manage the game logic.
+# The Game class should provide advice to the player based on the card count.
+
+# The class should have the following methods:
+# - __init__: Initialize the Game with a specified number of decks.
+# - deal: Deal two cards to a player and the house, and update the card count.
+# - hit: Perform a hit for the player and update the card count.
+# - split: Perform a split for the player.
+# - fold: Perform a fold for the player.
+# - reveal: Reveal the house's hand and determine the winner.
+# - reset: Reset the game state and card count.
+# - run: Run the Game and accept user commands.
+
 class Game:
-    def __init__(self, num_decks=1):
-        """
-        Initialize the Game with a specified number of decks.
-        :param num_decks: Number of decks used at the table.
-        """
-
-    def _update_count(self, card):
-        """
-        Update the card count based on the dealt card.
-        :param card: A card string (e.g., "2 of Hearts").
-        """
-
-    def _get_hand_value(self, hand):
-        """
-        Calculate the total value of a hand.
-        Aces count as 11 unless they would cause the hand to bust.
-        """
-
-    def _get_advice(self):
-        """
-        Provide advice based on the current card count.
-        :return: A string with advice.
-        """
-
-
-    def deal(self, player):
-        """
-        Deal two cards to a player and the house, and update the card count.
-        Also prints advice based on the card count.
-        :param player: The player's identifier.
-        """
-
-    def hit(self, player):
-        """
-        Perform a hit for the player and update the card count.
-        Also prints advice based on the card count.
-        :param player: The player's identifier.
-        """
-
-    def split(self, player):
-        """Perform a split for the player."""
-        self.table.split(player)
-
-    def fold(self, player):
-        """Perform a fold for the player."""
-        self.table.fold(player)
-
-    def reveal(self, player):
-        """
-        Reveal the house's hand and determine the winner.
-        :param player: The player's identifier.
-        """
-
-    def reset(self):
-        """Reset the game state and card count."""
-
     def run(self):
         """Run the Game and accept user commands."""
         print("Welcome to the Blackjack Game!")
