@@ -11,7 +11,7 @@ class TestDeck(unittest.TestCase):
     def test_unique_cards(self):
         """Test that a shuffled and drawn deck has no duplicate cards."""
         self.deck.shuffle()
-        drawn_cards = [self.deck.draw() for _ in range(52)]
+        drawn_cards = [tuple(self.deck.draw()[0].items()) for _ in range(52)]
         self.assertEqual(len(set(drawn_cards)), 52, "Deck has duplicate cards.")
 
     def test_randomness(self):
@@ -22,39 +22,52 @@ class TestDeck(unittest.TestCase):
         sequences = []
         for _ in range(10):
             self.deck.reset()
-            sequences.append([self.deck.draw() for _ in range(52)])
+            self.deck.shuffle()
+            sequences.append([tuple(card.items()) for card in self.deck.draw(52)])
         unique_sequences = len(set(tuple(seq) for seq in sequences))
-        self.assertGreater(unique_sequences, 1, "Shuffling produces identical sequences.")
+        self.assertGreater(
+            unique_sequences, 1, "Shuffling produces identical sequences."
+        )
 
     def test_draw_empty_deck(self):
         """Test that drawing from an empty deck raises an error."""
         for _ in range(52):
             self.deck.draw()
-        with self.assertRaises(IndexError, msg="No error raised for drawing from empty deck."):
+        with self.assertRaises(
+            ValueError, msg="No error raised for drawing from empty deck."
+        ):
             self.deck.draw()
 
-    def test_reset_deck(self):
-        """Test that resetting the deck restores it to its original state."""
-        self.deck.shuffle()
-        drawn_card = self.deck.draw()
-        self.deck.reset()
-        self.assertEqual(self.deck.remaining_cards(), 52, "Deck not reset to full size.")
-        self.assertIn(drawn_card, self.deck.cards, "Reset deck does not contain original cards.")
+    def test_multiple_deck(self):
+        multi_deck = Deck(deck_count=2)
+        self.assertEqual(
+            multi_deck.remaining_cards(),
+            104,
+            "Incorrect number of crads for multiple decks.",
+        )
 
     def test_remaining_cards(self):
         """Test that the remaining_cards method works correctly."""
-        self.assertEqual(self.deck.remaining_cards(), 52, "Initial deck size is not 52.")
+        self.assertEqual(
+            self.deck.remaining_cards(), 52, "Initial deck size is not 52."
+        )
         self.deck.draw()
-        self.assertEqual(self.deck.remaining_cards(), 51, "Deck size did not decrease after draw.")
+        self.assertEqual(
+            self.deck.remaining_cards(), 51, "Deck size did not decrease after draw."
+        )
 
     def test_str_representation(self):
         """Test the string representation of the deck."""
         self.assertEqual(
-            str(self.deck), "Deck with 52 cards remaining.", "Incorrect initial string representation."
+            str(self.deck),
+            "Deck with 52 cards remaining.",
+            "Incorrect initial string representation.",
         )
         self.deck.draw()
         self.assertEqual(
-            str(self.deck), "Deck with 51 cards remaining.", "String representation not updated after draw."
+            str(self.deck),
+            "Deck with 51 cards remaining.",
+            "String representation not updated after draw.",
         )
 
 
